@@ -1,13 +1,13 @@
 import { Button } from 'shared/ui/Button/Button';
 import { useDispatch, useSelector } from 'react-redux';
-import { StateSchema } from 'app/providers/StoreProvider/config/StateSchema';
 import { useTranslation } from 'react-i18next';
+import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 import { counterActions } from '../model/slice/counterSlice';
 
 export const Counter = () => {
     const dispatch = useDispatch();
 
-    const counterValue = useSelector((state:StateSchema) => state.counter.value);
+    const counterValue = useSelector(getCounterValue);
 
     const increment = () => {
         dispatch(counterActions.increment());
@@ -22,7 +22,7 @@ export const Counter = () => {
     return (
         <div>
             <h1>
-                {conterValue}
+                {counterValue}
             </h1>
             <Button onClick={increment}>
                 {t('incremetnt')}
