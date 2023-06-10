@@ -7,11 +7,11 @@ import { useTheme } from 'app/providers/ThemeProvider';
 import cls from './Modal.module.scss';
 
 interface ModalProps {
-  className?: string;
-  children?: ReactNode;
-  isOpen?: boolean;
-  onClose?: () => void;
-  lazy?: boolean;
+    className?: string;
+    children?: ReactNode;
+    isOpen?: boolean;
+    onClose?: () => void;
+    lazy?: boolean;
 }
 
 const ANIMATION_DELAY = 300;
@@ -20,8 +20,8 @@ export const Modal = (props: ModalProps) => {
     const {
         className,
         children,
-        onClose,
         isOpen,
+        onClose,
         lazy,
     } = props;
 
@@ -46,6 +46,7 @@ export const Modal = (props: ModalProps) => {
         }
     }, [onClose]);
 
+    // Новые ссылки!!!
     const onKeyDown = useCallback((e: KeyboardEvent) => {
         if (e.key === 'Escape') {
             closeHandler();
@@ -60,13 +61,14 @@ export const Modal = (props: ModalProps) => {
         if (isOpen) {
             window.addEventListener('keydown', onKeyDown);
         }
+
         return () => {
             clearTimeout(timerRef.current);
             window.removeEventListener('keydown', onKeyDown);
         };
     }, [isOpen, onKeyDown]);
 
-    const mods:Record<string, boolean> = {
+    const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     };
