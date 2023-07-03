@@ -16,6 +16,7 @@ import { Country } from 'entities/Country';
 import { TextTheme, Text } from 'shared/ui/Text/Text';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useParams } from 'react-router-dom';
+import { fetchArticleList } from 'pages/ArticlesPage/model/services/fetchArticleList';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
