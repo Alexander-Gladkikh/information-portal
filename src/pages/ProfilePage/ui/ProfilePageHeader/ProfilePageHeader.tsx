@@ -9,7 +9,7 @@ import {
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useCallback } from 'react';
 import { getUserAuthData } from 'entities/User';
-import { fetchArticleList } from 'pages/ArticlesPage/model/services/fetchArticleList';
+import { fetchArticleList } from 'pages/ArticlesPage/model/services/fetchArticleList/fetchArticleList';
 import cls from './ProfilePageHeader.module.scss';
 
 interface ProfilePageHeaderProps {
