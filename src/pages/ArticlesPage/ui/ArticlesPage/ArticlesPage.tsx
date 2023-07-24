@@ -15,7 +15,7 @@ import { articlesPageActions, articlesPageReducer, getArticles } from '../../mod
 import cls from './ArticlesPage.module.scss';
 
 interface ArticlesPageProps {
-  className?: string
+    className?: string
 }
 
 const reducers: ReducersList = {
@@ -40,13 +40,18 @@ const ArticlesPage = (props: ArticlesPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-            <ArticleList
-                isLoading={isLoading}
-                view={view}
-                articles={articles}
-                className={cls.list}
-                onLoadNextPart={onLoadNextPart}
-            />
+            <Page
+                onScrollEnd={onLoadNextPart}
+                className={classNames(cls.ArticlesPage, {}, [className])}
+            >
+                <ArticlesPageFilters />
+                <ArticleList
+                    isLoading={isLoading}
+                    view={view}
+                    articles={articles}
+                    className={cls.list}
+                />
+            </Page>
         </DynamicModuleLoader>
     );
 };

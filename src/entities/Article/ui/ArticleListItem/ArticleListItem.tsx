@@ -7,9 +7,9 @@ import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import { Card } from 'shared/ui/Card/Card';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
-import { ARTICLE_LIST_ITEM_LOCALSTORAGE_IDX } from 'shared/const/localstorage';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import {
     Article, ArticleBlockType, ArticleTextBlock, ArticleView,
@@ -17,18 +17,18 @@ import {
 import cls from './ArticleListItem.module.scss';
 
 interface ArticleListItemProps {
-  className?: string;
-  article: Article;
-  view: ArticleView;
-  target?: HTMLAttributeAnchorTarget;
-  index: number,
+    className?: string;
+    article: Article;
+    view: ArticleView;
+    target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
     const {
-        className, view, article, target, index,
+        className, view, article, target,
     } = props;
     const { t } = useTranslation();
+
     const types = <Text text={article.type.join(', ')} className={cls.types} />;
     const views = (
         <>
@@ -36,10 +36,6 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             <Icon Svg={EyeIcon} />
         </>
     );
-
-    const handleButtonClick = () => {
-        sessionStorage.setItem(ARTICLE_LIST_ITEM_LOCALSTORAGE_IDX, JSON.stringify(index));
-    };
 
     if (view === ArticleView.BIG) {
         const textBlock = article.blocks.find(
@@ -65,7 +61,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                             to={RoutePath.article_details + article.id}
                         >
                             {/* eslint-disable-next-line i18next/no-literal-string */}
-                            <Button theme={ButtonTheme.OUTLINE} onClick={handleButtonClick}>
+                            <Button theme={ButtonTheme.OUTLINE}>
                                 Читать далее...
                             </Button>
                         </AppLink>
@@ -81,7 +77,6 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             target={target}
             to={RoutePath.article_details + article.id}
             className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
-            onClick={handleButtonClick}
         >
             <Card className={cls.card}>
                 <div className={cls.imageWrapper}>
