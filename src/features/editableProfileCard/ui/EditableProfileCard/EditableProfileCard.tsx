@@ -25,11 +25,11 @@ import {
     getProfileIsLoading,
 } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
 import cls from './EditableProfileCard.module.scss';
-import { ValidateProfileError } from '../../model/types/editableProfileCardSchema';
+import {ValidateProfileError} from "features/editableProfileCard/model/consts/consts";
 
 interface EditableProfileCardProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 const reducers: ReducersList = {

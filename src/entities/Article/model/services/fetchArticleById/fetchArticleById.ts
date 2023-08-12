@@ -11,8 +11,6 @@ export const fetchArticleById = createAsyncThunk<
       async (articleId, thunkApi) => {
           const { extra, rejectWithValue } = thunkApi;
 
-
-
           try {
               if(!articleId) {
                throw new Error;

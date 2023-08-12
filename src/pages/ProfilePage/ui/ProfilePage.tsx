@@ -14,11 +14,7 @@ interface ProfilePageProps {
 
 const ProfilePage = ({ className }: ProfilePageProps) => {
     const { id } = useParams<{ id: string }>();
-    const { t } = useTranslation('profile');
 
-    if (!id) {
-        return <Text text={t('Профиль не найден')} />;
-    }
     return (
         <HStack max justify="end">
             <Page className={classNames('', {}, [className])}>
