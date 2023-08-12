@@ -559,6 +559,12 @@
       "userId": "1",
       "text": "vasdbsbd",
       "id": "1PbpMDH"
+    },
+    {
+      "articleId": "5",
+      "userId": "2",
+      "text": "ZcZcZcZcvds",
+      "id": "B7sXZ00"
     }
   ],
   "users": [
@@ -566,21 +572,27 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": ["ADMIN"],
+      "role": [
+        "ADMIN"
+      ],
       "avatar": "https://e7.pngegg.com/pngimages/1008/377/png-clipart-computer-icons-avatar-user-profile-avatar-heroes-black-hair.png"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": ["USER"],
+      "role": [
+        "USER"
+      ],
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     },
     {
       "id": "3",
       "username": "manager",
       "password": "123",
-      "role": ["MANAGER"],
+      "role": [
+        "MANAGER"
+      ],
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
@@ -601,7 +613,7 @@
       "first": "ulbi tv",
       "lastname": "asf",
       "age": 465,
-      "currency": "RUB",
+      "currency": "EUR",
       "country": "Russia",
       "city": "Moscow",
       "username": "ulbi tv",
