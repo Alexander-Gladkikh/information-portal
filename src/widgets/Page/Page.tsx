@@ -4,7 +4,7 @@ import {
 } from 'react';
 import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { scrollSaveActions, scrollSaveSlice } from 'features/ScrollSave/model/slices/scrollSaveSlice';
+import { scrollSaveActions } from 'features/ScrollSave/model/slices/scrollSaveSlice';
 import { useLocation } from 'react-router-dom';
 import { getScrollByPath } from 'features/ScrollSave';
 import { useSelector } from 'react-redux';
@@ -38,7 +38,6 @@ export const Page = memo((props: PageProps) => {
     });
 
     const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-        console.log('SCROLL');
         dispatch(scrollSaveActions.setUsername({
             position: e.currentTarget.scrollTop,
             path: pathname,

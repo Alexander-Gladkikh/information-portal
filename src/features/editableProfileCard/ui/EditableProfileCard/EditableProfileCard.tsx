@@ -10,6 +10,7 @@ import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { ProfileCard } from 'entities/Profile';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { VStack } from 'shared/ui/Stack';
+import { ValidateProfileError } from '../../model/consts/consts';
 import {
     EditableProfileCardHeader,
 } from '../EditableProfileCardHeader/EditableProfileCardHeader';
@@ -25,7 +26,6 @@ import {
     getProfileIsLoading,
 } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
 import cls from './EditableProfileCard.module.scss';
-import {ValidateProfileError} from "features/editableProfileCard/model/consts/consts";
 
 interface EditableProfileCardProps {
     className?: string;

@@ -1,8 +1,8 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ArticleDetailsComments } from './ArticleDetailsComments';
-import {StoreDecorator} from "shared/config/storybook/StoreDecorator/StoreDecorator";
 
 export default {
     title: 'pages/ArticleDetailsComments/ArticleDetailsComments',
@@ -18,5 +18,4 @@ export const Normal = Template.bind({});
 Normal.args = {
     id: '1',
 };
-Normal.decorators = [StoreDecorator({})]
-
+Normal.decorators = [StoreDecorator({})];

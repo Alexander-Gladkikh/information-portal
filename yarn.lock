@@ -6324,6 +6324,13 @@ eslint-plugin-es@^4.1.0:
     eslint-utils "^2.0.0"
     regexpp "^3.0.0"
 
+eslint-plugin-gladkikh-plugin@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-gladkikh-plugin/-/eslint-plugin-gladkikh-plugin-0.0.2.tgz#42de650ba78902b3e97487b2634c3be76424bfa7"
+  integrity sha512-5gP77a9nqKHXGPuCXMSEZ+fdgGU7p+jvc/SWtG6LLybZ3wTscORqb8sqLiWIRuB/QwjVvS1HYK10O2oqC3jLCQ==
+  dependencies:
+    requireindex "^1.2.0"
+
 eslint-plugin-i18next@^5.1.2:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-i18next/-/eslint-plugin-i18next-5.2.1.tgz#9ce619f4958e9c58c70e4900585ec3b1c8065614"
@@ -6431,13 +6438,6 @@ eslint-plugin-storybook@^0.6.13:
     "@typescript-eslint/utils" "^5.45.0"
     requireindex "^1.1.0"
     ts-dedent "^2.2.0"
-
-eslint-plugin-ulbi-tv-plugin@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-ulbi-tv-plugin/-/eslint-plugin-ulbi-tv-plugin-0.0.1.tgz#bf3704f9c864424f496c1730272d4c1ee64cee3c"
-  integrity sha512-awxUVm2mxJQ9h3DVaZQuikJEkNG4KchgS80frAQ/AeUYGFYyJQqPGWnRqyETfGypbWCQiaRb/nFWuct83Q3BEw==
-  dependencies:
-    requireindex "^1.2.0"
 
 eslint-scope@5.1.1, eslint-scope@^5.1.1:
   version "5.1.1"

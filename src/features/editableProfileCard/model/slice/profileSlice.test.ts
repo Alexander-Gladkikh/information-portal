@@ -1,9 +1,9 @@
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
+import { ValidateProfileError } from '../consts/consts';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
-import { ProfileSchema} from '../types/editableProfileCardSchema';
+import { ProfileSchema } from '../types/editableProfileCardSchema';
 import { profileActions, profileReducer } from './profileSlice';
-import {ValidateProfileError} from "features/editableProfileCard/model/consts/consts";
 
 describe('profileSlice.test', () => {
     const data = {
