@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, Meta } from '@storybook/react';
 import { ListBox } from './ListBox';
 
 export default {
@@ -11,7 +11,7 @@ export default {
     decorators: [
         (Story) => <div style={{ padding: 100 }}><Story /></div>,
     ],
-} as ComponentMeta<typeof ListBox>;
+} as Meta<typeof ListBox>;
 
 const Template: ComponentStory<typeof ListBox> = (args) => <ListBox {...args} />;
 
