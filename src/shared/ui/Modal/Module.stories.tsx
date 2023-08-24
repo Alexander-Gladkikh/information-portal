@@ -5,7 +5,7 @@ import { Theme } from '@/app/providers/ThemeProvider';
 import { Modal } from '../Modal/Modal';
 
 export default {
-    title: 'shared/Modal',
+    title: 'shared/Module',
     component: Modal,
     argTypes: {
         backgroundColor: { control: 'color' },
