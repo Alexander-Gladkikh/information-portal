@@ -73,7 +73,7 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'no-react/no-array-index-key': 'off',
-        'gladkikh-plugin/path-checker': 'error',
+        'gladkikh-plugin/path-checker': ['error', { alias: '@' }],
     },
     globals: {
         __IS_DEV__: true,
