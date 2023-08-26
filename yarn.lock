@@ -6540,10 +6540,10 @@ eslint-plugin-es@^4.1.0:
     eslint-utils "^2.0.0"
     regexpp "^3.0.0"
 
-eslint-plugin-gladkikh-plugin@0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-gladkikh-plugin/-/eslint-plugin-gladkikh-plugin-0.0.3.tgz#a6855182beaabf2d3abba0554082c27dfdc279e3"
-  integrity sha512-x/hj6CUrYAjhYWa9+v4boatBlfuRlrZZYM3CPIKLPvpR/uOFRS5JK4Q3CN/j2z1O/1YKuq1Rr2EURxC3gB+8jA==
+eslint-plugin-gladkikh-plugin@0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-gladkikh-plugin/-/eslint-plugin-gladkikh-plugin-0.0.4.tgz#55d5342b80edf86e8b40b0d73a8830a262f9d549"
+  integrity sha512-JSp2U7+SsofPCFhtzezmUzKXUUrOvIXbVj8t9eETv1h1miZZuaomLz1IrnrQPtSkw+0ZIRjD/NlRz9rZzhe+Gw==
   dependencies:
     requireindex "^1.2.0"
 
