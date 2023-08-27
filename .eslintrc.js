@@ -74,7 +74,13 @@ module.exports = {
         'no-undef': 'off',
         'no-react/no-array-index-key': 'off',
         'gladkikh-plugin/path-checker': ['error', { alias: '@' }],
-        'gladkikh-plugin/public-api-imports': ['error', { alias: '@' }],
+        'gladkikh-plugin/public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+            },
+        ],
     },
     globals: {
         __IS_DEV__: true,
