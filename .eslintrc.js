@@ -74,6 +74,13 @@ module.exports = {
         'no-undef': 'off',
         'no-react/no-array-index-key': 'off',
         'gladkikh-plugin/path-checker': ['error', { alias: '@' }],
+        'gladkikh-plugin/layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+            },
+        ],
         'gladkikh-plugin/public-api-imports': [
             'error',
             {
