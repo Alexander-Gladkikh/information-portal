@@ -117,6 +117,7 @@
     "@reduxjs/toolkit": "^1.9.0",
     "@storybook/react-webpack5": "^7.2.1",
     "@use-gesture/react": "^10.2.27",
+    "aws-sdk": "^2.1450.0",
     "axios": "^0.26.1",
     "babel-plugin-add-react-displayname": "^0.0.5",
     "circular-dependency-plugin": "^5.2.2",
