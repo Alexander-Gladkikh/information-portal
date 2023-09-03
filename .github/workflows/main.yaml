@@ -67,21 +67,21 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: yarn install --force
+        run: npm ci --force
       - name: build production project
-        run: yarn run build:prod
+        run: npm run build:prod
         if: always()
       - name: build storybook
-        run: yarn run storybook:build
+        run: npm run storybook:build
         if: always()
       - name: screenshot testing
-        run: yarn run test:ui:ci
+        run: npm run test:ui:ci
         if: always()
       - name: unit testing
         if: always()
-        run: yarn run test:unit
+        run: npm run test:unit
       - name: Generate HTML report
-        run: yarn run test:ui:report
+        run: npm run test:ui:report
         if: always()
       - name: move loki
         run: mv .loki reports/
@@ -111,10 +111,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: yarn install --force
+        run: npm ci --force
       - name: linting typescript
-        run: yarn run lint:ts
+        run: npm run lint:ts
         if: always()
       - name: linting css
-        run: yarn run lint:scss
+        run: npm run lint:scss
 
