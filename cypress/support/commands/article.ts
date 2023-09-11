@@ -22,7 +22,7 @@ export const createArticle = (article?: Article) => cy.request({
 
 export const removeArticle = (articleId: string) => cy.request({
     method: 'DELETE',
-    url: `http://localhost:8000/articles${articleId}`,
+    url: `http://localhost:8000/articles/${articleId}`,
     headers: { Authorization: 'asasf' },
 });
 
