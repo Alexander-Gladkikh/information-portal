@@ -9,7 +9,10 @@ export const scrollSaveSlice = createSlice({
     name: 'scrollSaveSchemaSlice',
     initialState,
     reducers: {
-        setUsername: (state, { payload }: PayloadAction<{ path: string; position: number }>) => {
+        setUsername: (
+            state,
+            { payload }: PayloadAction<{ path: string; position: number }>,
+        ) => {
             state.scroll[payload.path] = payload.position;
         },
     },

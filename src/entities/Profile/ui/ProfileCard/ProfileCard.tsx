@@ -12,19 +12,19 @@ import { Profile } from '../../model/types/profile';
 import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
-  className?: string
-  data?: Profile
-  error?: string
-  isLoading?: boolean
-  readonly?: boolean
-  onChangeFirstname?: (value?: string) => void
-  onChangeLastname?: (value?: string) => void
-  onChangeAge?: (value?: string) => void
-  onChangeCity?: (value?: string) => void
-  onChangeUsername?: (value?: string) => void
-  onChangeAvatar?: (value?: string) => void
-  onChangeCurrency?: (currency: Currency) => void
-  onChangeCountry?: (country: Country) => void
+    className?: string;
+    data?: Profile;
+    error?: string;
+    isLoading?: boolean;
+    readonly?: boolean;
+    onChangeFirstname?: (value?: string) => void;
+    onChangeLastname?: (value?: string) => void;
+    onChangeAge?: (value?: string) => void;
+    onChangeCity?: (value?: string) => void;
+    onChangeUsername?: (value?: string) => void;
+    onChangeAvatar?: (value?: string) => void;
+    onChangeCurrency?: (currency: Currency) => void;
+    onChangeCountry?: (country: Country) => void;
 }
 
 export const ProfileCard = memo((props: ProfileCardProps) => {
@@ -50,7 +50,11 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
             <HStack
                 justify="center"
                 max
-                className={classNames(cls.ProfileCard, { [cls.loading]: true }, [className])}
+                className={classNames(
+                    cls.ProfileCard,
+                    { [cls.loading]: true },
+                    [className],
+                )}
             >
                 <Loader />
             </HStack>
@@ -62,7 +66,10 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
             <HStack
                 justify="center"
                 max
-                className={classNames(cls.ProfileCard, {}, [className, cls.error])}
+                className={classNames(cls.ProfileCard, {}, [
+                    className,
+                    cls.error,
+                ])}
             >
                 <Text
                     theme={TextTheme.ERROR}

@@ -14,7 +14,7 @@ describe('getProfileData.test', () => {
         currency: Currency.RUB,
     };
     test('should return error', () => {
-        const state:DeepPartial<StateSchema> = {
+        const state: DeepPartial<StateSchema> = {
             profile: {
                 form: data,
             },
@@ -23,7 +23,7 @@ describe('getProfileData.test', () => {
     });
 
     test('should work with empty state', () => {
-        const state:DeepPartial<StateSchema> = {};
+        const state: DeepPartial<StateSchema> = {};
         expect(getProfileForm(state as StateSchema)).toEqual(undefined);
     });
 });

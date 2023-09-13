@@ -9,22 +9,17 @@ import {
 } from '../../selectors/articlesPageSelectors';
 
 export const fetchNextArticlesPage = createAsyncThunk<
- void,
- void,
-  ThunkConfig<string>
-  >(
-      'ArticlesPage/fetchNextArticlesPage',
-      async (_, thunkApi) => {
-          const {
-              getState, dispatch,
-          } = thunkApi;
-          const hasMore = getArticlesPageHasMore(getState());
-          const page = getArticlesPageNum(getState());
-          const isLoading = getArticlesPageIsLoading(getState());
+    void,
+    void,
+    ThunkConfig<string>
+>('ArticlesPage/fetchNextArticlesPage', async (_, thunkApi) => {
+    const { getState, dispatch } = thunkApi;
+    const hasMore = getArticlesPageHasMore(getState());
+    const page = getArticlesPageNum(getState());
+    const isLoading = getArticlesPageIsLoading(getState());
 
-          if (hasMore && !isLoading) {
-              dispatch(articlesPageActions.setPage(page + 1));
-              dispatch(fetchArticleList({}));
-          }
-      },
-  );
+    if (hasMore && !isLoading) {
+        dispatch(articlesPageActions.setPage(page + 1));
+        dispatch(fetchArticleList({}));
+    }
+});

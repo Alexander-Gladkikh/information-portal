@@ -11,7 +11,7 @@ import {
 } from '../../model/selectors/articlesPageSelectors';
 
 interface ArticleInfinteListProps {
-  className?: string
+    className?: string;
 }
 
 export const ArticleInfinteList = memo((props: ArticleInfinteListProps) => {
