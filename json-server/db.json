@@ -716,6 +716,10 @@
             "username": "admin",
             "password": "123",
             "role": ["ADMIN"],
+            "features": {
+                "isArticleEnabled": true,
+                "isCounterEnabled": true
+            },
             "avatar": "https://e7.pngegg.com/pngimages/1008/377/png-clipart-computer-icons-avatar-user-profile-avatar-heroes-black-hair.png"
         },
         {
@@ -723,6 +727,10 @@
             "username": "user",
             "password": "123",
             "role": ["USER"],
+            "features": {
+                "isArticleEnabled": false,
+                "isCounterEnabled": false
+            },
             "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
         },
         {
@@ -730,6 +738,10 @@
             "username": "manager",
             "password": "123",
             "role": ["MANAGER"],
+            "features": {
+                "isArticleEnabled": true,
+                "isCounterEnabled": true
+            },
             "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
         },
         {
@@ -737,6 +749,10 @@
             "username": "testuser",
             "password": "123",
             "role": ["ADMIN"],
+            "features": {
+                "isArticleEnabled": false,
+                "isCounterEnabled": false
+            },
             "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
         }
     ],
