@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { useParams } from 'react-router-dom';
-import { Simulate } from 'react-dom/test-utils';
 import { ArticleDetails } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
@@ -15,8 +14,7 @@ import { ArticleDetailsComments } from '../../ui/ArticleDetailsComments/ArticleD
 import { ArticleDetailsPageHeader } from '../../ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleRating } from '@/features/articleRating';
-import { getFeatureFlag, toggleFeatures } from '@/shared/lib/features';
-import toggle = Simulate.toggle;
+import { getFeatureFlag, ToggleFeatures } from '@/shared/lib/features';
 import { Card } from '@/shared/ui/Card';
 
 interface ArticleDetailsPageProps {
@@ -31,17 +29,11 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     const { className } = props;
     const { t } = useTranslation('article-details');
     const { id } = useParams<{ id: string }>();
-    const isArticleRatingEnabled = getFeatureFlag('isArticleEnabled');
+    const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
 
     if (!id) {
         return null;
     }
-
-    const articleRatingCard = toggleFeatures({
-        name: 'isArticleEnabled',
-        on: () => <ArticleRating articleId={id} />,
-        off: () => <Card>{t('Оценка статей скоро появиться!')}</Card>,
-    });
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
@@ -49,7 +41,11 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
                 <VStack gap="16" max>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
-                    {articleRatingCard}
+                    <ToggleFeatures
+                        features="isArticleRatingEnabled"
+                        on={<ArticleRating articleId={id} />}
+                        off={<Card>{t('Оценка статей скоро появиться!')}</Card>}
+                    />
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={id} />
                 </VStack>
