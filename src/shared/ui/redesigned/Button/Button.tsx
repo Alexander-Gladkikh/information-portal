@@ -2,52 +2,52 @@ import { ButtonHTMLAttributes, memo, ReactNode } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 
-export enum ButtonTheme {
-    CLEAR = 'clear',
-    CLEAR_INVERTED = 'clearInverted',
-    OUTLINE = 'outline',
-    OUTLINE_RED = 'outline_red',
-    BACKGROUND = 'background',
-    BACKGROUND_INVERTED = 'backgroundInverted',
-}
+export type ButtonVariant = 'clear' | 'outline';
 
-export enum ButtonSize {
-    M = 'size_m',
-    L = 'size_l',
-    XL = 'size_xl',
-}
+export type ButtonSize = 'm' | 'l' | 'xl';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
-    theme?: ButtonTheme;
+    /**
+     * Тема кнопки. Отвечает за визуал (в рамке, без стилей, противоположный теме приложения цвет и тд)
+     */
+    variant?: ButtonVariant;
+    /**
+     * Флаг, делающий кнопку квадратной
+     */
     square?: boolean;
+    /**
+     * Размер кнопки в соответствии с дизайн системой
+     */
     size?: ButtonSize;
+    /**
+     * Флаг, отвечающий за работу кнопки
+     */
     disabled?: boolean;
+    /**
+     * Содержимое кнопки
+     */
     children?: ReactNode;
+    /**
+     * Увеличивает кнопку на всю свободную ширину
+     */
     fullWidth?: boolean;
 }
-
-/**
- * Компонент устарел и больше не поддерживаеться
- * @deprecated
- */
 
 export const Button = memo((props: ButtonProps) => {
     const {
         className,
         children,
-        theme = ButtonTheme.OUTLINE,
+        variant = 'outline',
         square,
         disabled,
-        size = ButtonSize.M,
         fullWidth,
+        size = 'm',
         ...otherProps
     } = props;
 
     const mods: Mods = {
-        [cls[theme]]: true,
         [cls.square]: square,
-        [cls[size]]: true,
         [cls.disabled]: disabled,
         [cls.fullWidth]: fullWidth,
     };
@@ -55,7 +55,11 @@ export const Button = memo((props: ButtonProps) => {
     return (
         <button
             type="button"
-            className={classNames(cls.Button, mods, [className])}
+            className={classNames(cls.Button, mods, [
+                className,
+                cls[variant],
+                cls[size],
+            ])}
             disabled={disabled}
             {...otherProps}
         >

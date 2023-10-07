@@ -6,7 +6,7 @@ import { Icon } from '@/shared/ui/redesigned/Icon';
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import { Card } from '@/shared/ui/deprecated/Card';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
-import { Button, ButtonTheme } from '@/shared/ui/redesigned/Button';
+import { Button } from '@/shared/ui/redesigned/Button';
 import { AppLink } from '@/shared/ui/redesigned/AppLink';
 import {
     ArticleView,
@@ -80,9 +80,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                             to={getRouteArticleDetails(article.id)}
                         >
                             {/* eslint-disable-next-line i18next/no-literal-string */}
-                            <Button theme={ButtonTheme.OUTLINE}>
-                                Читать далее...
-                            </Button>
+                            <Button variant="outline">Читать далее...</Button>
                         </AppLink>
                         {views}
                     </div>

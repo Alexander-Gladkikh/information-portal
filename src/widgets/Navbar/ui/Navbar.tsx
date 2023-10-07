@@ -12,7 +12,7 @@ import { getRouteArticleCreate } from '@/shared/const/router';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { TextTheme, Text } from '@/shared/ui/deprecated/Text';
 import { AppLink } from '@/shared/ui/redesigned/AppLink';
-import { Button, ButtonTheme } from '@/shared/ui/redesigned/Button';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 
 interface NavbarProps {
     className?: string;
