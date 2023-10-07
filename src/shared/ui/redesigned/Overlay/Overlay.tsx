@@ -8,11 +8,6 @@ interface OverlayProps {
     children?: ReactNode;
 }
 
-/**
- * Компонент устарел и больше не поддерживаеться
- * @deprecated
- */
-
 export const Overlay = memo((props: OverlayProps) => {
     const { className, onClick, children } = props;
 
