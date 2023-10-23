@@ -13,7 +13,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     const { id } = useParams<{ id: string }>();
 
     return (
-        <HStack max>
+        <HStack max justify="end">
             <Page
                 data-testid="ProfilePage"
                 className={classNames('', {}, [className])}
