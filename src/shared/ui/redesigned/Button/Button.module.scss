@@ -14,13 +14,18 @@
     }
 }
 
-.addonLeft .addonRight {
+.withAddon {
+    padding: 0 16px;
+}
+
+.addonLeft, .addonRight {
     display: flex;
 }
 
-.addonLeft svg, .addonRight svg {
+.addonRight svg, .addonLeft svg {
     color: var(--hint-redesigned);
 }
+
 
 .clear {
     padding: 0;
@@ -34,6 +39,16 @@
     border: none;
     outline: none;
     border-radius: 34px;
+}
+
+.outline {
+    background: none;
+    border: 1px solid var(--icon-redesigned);
+    border-radius: 34px;
+
+    &:hover {
+        border: 1px solid var(--accent-redesigned);
+    }
 }
 
 .square {
@@ -73,8 +88,4 @@
 
 .fullWidth {
     width: 100%;
-}
-
-.withAddon {
-    padding: 0 16px;
 }
