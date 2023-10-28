@@ -1,5 +1,5 @@
-import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
+import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { RatingCard } from '@/entities/Rating';
 import {
@@ -23,7 +23,6 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
         articleId,
         userId: userData?.id ?? '',
     });
-
     const [rateArticleMutation] = useRateArticle();
 
     const handleRateArticle = useCallback(
@@ -36,6 +35,7 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
                     feedback,
                 });
             } catch (e) {
+                // handle error
                 console.log(e);
             }
         },
@@ -64,13 +64,13 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
 
     return (
         <RatingCard
-            onAccept={onAccept}
             onCancel={onCancel}
+            onAccept={onAccept}
             rate={rating?.rate}
             className={className}
             title={t('Оцените статью')}
             feedbackTitle={t(
-                'Оставьте свой отзыв о статье, это поможет улучшить  качество',
+                'Оставьте свой отзыв о статье, это поможет улучшить качество',
             )}
             hasFeedback
         />
