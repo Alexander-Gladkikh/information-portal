@@ -1,9 +1,13 @@
-.primary {
-    color: var(--text-redesigned);
+.AppLink {
+    color: var(--primary-color);
 
     &:hover {
-        color: var(--accent-redesigned);
+        opacity: 0.8;
     }
+}
+
+.primary {
+    color: var(--primary-color);
 }
 
 .secondary {
@@ -11,8 +15,5 @@
 }
 
 .red {
-    color: var(--cancel-redesigned);
-    &:hover {
-        opacity: 0.8;
-    }
+    color: red;
 }
