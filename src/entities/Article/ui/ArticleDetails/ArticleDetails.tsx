@@ -116,7 +116,7 @@ export const ArticleDetailsSkeleton = () => {
 
 export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     const { className, id } = props;
-    const { t } = useTranslation();
+    const { t } = useTranslation('article-details');
     const dispatch = useAppDispatch();
     const isLoading = useSelector(getArticleDetailsIsLoading);
     const error = useSelector(getArticleDetailsError);
