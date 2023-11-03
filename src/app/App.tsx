@@ -52,7 +52,7 @@ const App = memo(function App() {
                         <Navbar />
                         <div className="content-page">
                             <Sidebar />
-                            {inited && <AppRouter />}
+                            <AppRouter />
                         </div>
                     </Suspense>
                 </div>

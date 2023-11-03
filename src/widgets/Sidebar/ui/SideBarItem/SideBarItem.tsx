@@ -5,10 +5,11 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { getUserAuthData } from '@/entities/User';
 import { SideBarItemType } from '../../model/types/sidebar';
 import cls from './SideBarItem.module.scss';
+import { AppLink } from '@/shared/ui/redesigned/AppLink';
 import {
-    AppLink,
     AppLink as AppLinkDeprecated,
-} from '@/shared/ui/redesigned/AppLink';
+    AppLinkTheme,
+} from '@/shared/ui/deprecated/AppLink';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Icon } from '@/shared/ui/redesigned/Icon';
 
@@ -42,7 +43,7 @@ export const SideBarItem = memo(({ item, collapsed }: SideBarItemProps) => {
             }
             off={
                 <AppLinkDeprecated
-                    variant="primary"
+                    theme={AppLinkTheme.PRIMARY}
                     to={item.path}
                     className={classNames(cls.item, {
                         [cls.collapsed]: collapsed,

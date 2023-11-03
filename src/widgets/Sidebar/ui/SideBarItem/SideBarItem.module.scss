@@ -1,5 +1,4 @@
 .item {
-    margin-top: 10px;
     display: flex;
     align-items: center;
 }
@@ -7,6 +6,10 @@
 .link {
     margin-left: 10px;
     opacity: 1;
+}
+
+.icon {
+    fill: var(--inverted-primary-color);
 }
 
 .collapsed {
@@ -26,6 +29,7 @@
 
 .collapsedRedesigned {
     padding: 0 8px;
+
     .link {
         opacity: 0;
         width: 0;
@@ -38,7 +42,7 @@
     position: relative;
 
     &::before {
-        content: '';
+        content: "";
         position: absolute;
         width: 2px;
         left: 0;
