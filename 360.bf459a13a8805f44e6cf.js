@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkproduction_project=self.webpackChunkproduction_project||[]).push([[360],{4360:function(t,c,e){e.r(c);var o=e(7294),n=e(2327),r=e(5893);const u=(0,o.memo)((()=>{const{t:t}=(0,n.$)("about");return(0,r.jsx)("div",{children:t("Страница администратора")})}));c.default=u}}]);
